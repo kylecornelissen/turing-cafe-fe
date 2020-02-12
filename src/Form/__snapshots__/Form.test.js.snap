@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<form
+  autoComplete="off"
+>
+  <h1>
+    Create Reservation Form
+  </h1>
+  <input
+    className="name-input"
+    name="name"
+    onChange={[Function]}
+    placeholder="Name"
+    type="text"
+    value=""
+  />
+  <input
+    name="date"
+    onChange={[Function]}
+    placeholder="Date (mm/dd)"
+    type="text"
+    value=""
+  />
+  <input
+    name="time"
+    onChange={[Function]}
+    placeholder="Time"
+    type="text"
+    value=""
+  />
+  <input
+    name="num"
+    onChange={[Function]}
+    placeholder="How many guests?"
+    type="text"
+    value=""
+  />
+  <button
+    onClick={[Function]}
+    type="submit"
+  >
+    Make Reservation
+  </button>
+</form>
+`;

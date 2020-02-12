@@ -39,6 +39,7 @@ class Form extends Component {
           name='name'
           value={this.state.name}
           onChange={event => this.handleChange(event)}
+          className='name-input'
         />
         <input
           type='text'
