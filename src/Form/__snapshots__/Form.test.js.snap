@@ -8,6 +8,7 @@ exports[`Form should match the snapshot 1`] = `
     Create Reservation Form
   </h1>
   <input
+    className="name-input"
     name="name"
     onChange={[Function]}
     placeholder="Name"

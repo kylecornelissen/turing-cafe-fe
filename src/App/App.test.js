@@ -12,11 +12,8 @@ it('renders without crashing', () => {
 describe('App', () => {
   let wrapper
 
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
-
   it('should match the snapshot', () => {
+    wrapper = shallow(<App />);
     expect(wrapper).toMatchSnapshot();
   });
 });
