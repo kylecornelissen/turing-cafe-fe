@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Reservation from '../Reservation/Reservation.js'
+import Reservation from '../Reservation/Reservation.js';
+import './ReservationContainer.css'
 
 class ReservationContainer extends Component {
   constructor() {
@@ -16,13 +17,13 @@ class ReservationContainer extends Component {
   }
   render() {
     let {reservations} = this.state;
-    reservations = reservations.map(reservation => {
+    reservations = reservations.reverse().map(reservation => {
       return (
         <Reservation
+          key={reservation.id}
           name={reservation.name}
           date={reservation.date}
           time={reservation.time}
-          key={reservation.id}
           num={reservation.number}
         />
       )
