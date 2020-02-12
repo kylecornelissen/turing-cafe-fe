@@ -4,6 +4,21 @@ import ReservationContainer from '../ReservationContainer/ReservationContainer.j
 import Form from '../Form/Form.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reservations: []
+    };
+  }
+  componentDidMount() {
+    this.fetchReservations();
+  }
+  fetchReservations() {
+    fetch('http://localhost:3001/api/v1/reservations')
+      .then(res => res.json())
+      .then(reservations => this.setState({ reservations }))
+      .catch(error => console.log(error))
+  }
   addReservation(newReservation) {
     const options = {
       method: 'POST',
@@ -22,6 +37,18 @@ class App extends Component {
       .then(data => console.log(data))
       .catch(error => console.log(error))
   }
+  removeReservation(id) {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch(`http://localhost:3001/api/v1/reservations/${id}`, options)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+  }
   render() {
     return (
       <div className="App">
@@ -30,7 +57,7 @@ class App extends Component {
           <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
-          <ReservationContainer />
+          <ReservationContainer reservations={this.state.reservations} removeReservation={this.removeReservation}/>
         </div>
       </div>
     )
