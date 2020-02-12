@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReservationContainer from '../ReservationContainer/ReservationContainer.js';
 
 class App extends Component {
+  
   render() {
     return (
       <div className="App">
@@ -10,7 +12,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <ReservationContainer />
         </div>
       </div>
     )
